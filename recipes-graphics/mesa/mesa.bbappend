@@ -46,6 +46,7 @@ PACKAGECONFIG[opencl] = "-Dgallium-opencl=icd,-Dgallium-opencl=disabled,"
 
 DEPENDS += " \
 	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'wayland-protocols', '', d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'libxshmfence', '', d)} \
 	llvm \
 	python3-pyyaml \
 	python3-pyyaml-native \
